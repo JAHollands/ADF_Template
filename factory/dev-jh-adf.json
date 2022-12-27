@@ -1,0 +1,9 @@
+{
+	"name": "dev-jh-adf",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5d54f663-e4d7-4c25-ae30-d98d503a3103",
+		"tenantId": "de3d33b0-e6ea-49f0-b4cb-314011264abe"
+	}
+}
