@@ -9,7 +9,7 @@
 						"referenceName": "ds_dataset_example",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "source"
 				}
 			],
 			"sinks": [
@@ -18,18 +18,18 @@
 						"referenceName": "ds_dataset_example",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "sink"
 				}
 			],
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 sink(allowSchemaDrift: true,",
+				"     ignoreNoFilesFound: false) ~> source",
+				"source sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true) ~> sink"
 			]
 		}
 	}
