@@ -13,7 +13,7 @@ pool:
 
 variables:
   subscriptionId: '77e5c111-fef2-47a0-917b-783926a8ea2f'  # Use your subscription ID
-  resourceGroup: 'test-jh-rg'                      # Use the resource group for the development data factory
+  resourceGroup: 'dev-jh-rg'                      # Use the resource group for the development data factory
   dataFactory: 'dev-jh-adf'                       # Use your development data factory name
   PackageFolder: 'build'                                  # Use the GIT folder under which you have the package files
   adfRootFolder: ''                                       # Use the GIT folder under which you have the ADF resources. If it's root leave as blank
