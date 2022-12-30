@@ -7,6 +7,14 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "dev-jh-adf"
 		},
+		"ls_blob_storage_example_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob_storage_example'"
+		},
+		"ls_data_lake_example_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://devjhdl.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -33,6 +41,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"ls_blob_storage_example_connectionString": {
+						"value": "[parameters('ls_blob_storage_example_connectionString')]"
+					},
+					"ls_data_lake_example_properties_typeProperties_url": {
+						"value": "[parameters('ls_data_lake_example_properties_typeProperties_url')]"
 					}
 				}
 			},

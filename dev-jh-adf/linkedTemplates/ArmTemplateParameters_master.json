@@ -5,6 +5,12 @@
 		"factoryName": {
 			"value": "dev-jh-adf"
 		},
+		"ls_blob_storage_example_connectionString": {
+			"value": ""
+		},
+		"ls_data_lake_example_properties_typeProperties_url": {
+			"value": "https://devjhdl.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"value": ""
 		},
