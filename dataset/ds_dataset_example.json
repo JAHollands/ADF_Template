@@ -1,0 +1,22 @@
+{
+	"name": "ds_dataset_example",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blob_storage_example",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ecdc_file_list.json",
+				"container": "configs"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
