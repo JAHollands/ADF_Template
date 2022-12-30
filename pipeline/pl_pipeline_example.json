@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data from source to sink",
+				"name": "Copy data source to sink",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
