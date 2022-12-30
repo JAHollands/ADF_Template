@@ -1,9 +1,6 @@
-# File Name: adf-ci-option-2-build-pipeline.yml
-# Purpose: Build pipeline for the development Azure Data Factory 
-#           Automatically triggered on completion of a pull request and merge to main branch
-#           Validates the Data Factory resources 
-#           Generates the ARM template and publishes for consumption via Release pipeline
-# Build Pipeline Name: ADF CI Option 2 Build Pipeline
+# Purpose: Build pipeline template for the development Azure Data Factory 
+# Automatically triggered on completion of a pull request and merge to main branch
+# Generates the ARM template and publishes for consumption via Release pipeline
 
 trigger:
 - main
@@ -12,11 +9,11 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  subscriptionId: '77e5c111-fef2-47a0-917b-783926a8ea2f'  # Use your subscription ID
-  resourceGroup: 'dev-jh-rg'                      # Use the resource group for the development data factory
-  dataFactory: 'dev-jh-adf'                       # Use your development data factory name
-  PackageFolder: 'build'                                  # Use the GIT folder under which you have the package files
-  adfRootFolder: ''                                       # Use the GIT folder under which you have the ADF resources. If it's root leave as blank
+  subscriptionId: '77e5c111-fef2-47a0-917b-783926a8ea2f'  # Replace with your Azure subscription ID
+  resourceGroup: 'dev-jh-rg'  # Replace with the resource group used for the 'dev' data factory
+  dataFactory: 'dev-jh-adf' # Replace with the 'dev' data factory name
+  PackageFolder: 'build'  # Replace with the GIT folder holding the .json package files
+  adfRootFolder: '' # Replace with the GIT folder hjolding the ADF resources. In this example the files are at the root so the value is left blank
 
 steps:
 
@@ -30,7 +27,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: '$(Build.Repository.LocalPath)/$(packageFolder)' #replace with the package.json folder
+    workingDir: '$(Build.Repository.LocalPath)/$(packageFolder)'  #paramaterised as above to pickup the package.json file
     verbose: true
   displayName: 'Install npm packages'
 
@@ -38,11 +35,11 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    workingDir: '$(Build.Repository.LocalPath)/build' #replace with the package.json folder
+    workingDir: '$(Build.Repository.LocalPath)/build' #paramaterised as above to pickup the package.json file
     customCommand: 'run build validate $(Build.Repository.LocalPath)/$(adfRootFolder) /subscriptions/$(subscriptionId)/resourceGroups/$(resourceGroup)/providers/Microsoft.DataFactory/factories/$(dataFactory)'
   displayName: 'Validate Data Factory Resources'
 
-# Generate the ARM template into the destination folder, which is the same as selecting "Publish" from the UX.
+# Generate the ARM template
 - task: Npm@1
   inputs:
     command: 'custom'
