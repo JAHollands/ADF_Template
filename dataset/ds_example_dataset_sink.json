@@ -2,12 +2,8 @@
 	"name": "ds_example_dataset_sink",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_data_lake",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"storageAccountUrl": "https://devjhdl.dfs.core.windows.net/",
-				"storageAccountKey": "QuyGnj8NfRzK1ING76DAEtIMaB8B0AlXZmxzCDlfJJZiG++KSaWm03ukAEicInrH87tMSqiDhdNM+AStOk2YcQ=="
-			}
+			"referenceName": "ls_data_lake_example",
+			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
