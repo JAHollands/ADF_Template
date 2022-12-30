@@ -1,0 +1,25 @@
+{
+	"name": "ls_data_lake",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"storageAccountUrl": {
+				"type": "string",
+				"defaultValue": "https://devjhdl.dfs.core.windows.net/"
+			},
+			"storageAccountKey": {
+				"type": "string",
+				"defaultValue": "QuyGnj8NfRzK1ING76DAEtIMaB8B0AlXZmxzCDlfJJZiG++KSaWm03ukAEicInrH87tMSqiDhdNM+AStOk2YcQ=="
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "@{linkedService().storageAccountUrl}",
+			"accountKey": {
+				"type": "SecureString",
+				"value": "**********"
+			}
+		}
+	}
+}

@@ -1,22 +1,29 @@
 {
-	"name": "ds_dataset_example",
+	"name": "ds_example_dataset_source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_blob_storage_example",
+			"referenceName": "ls_data_lake",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"fileName": "ecdc_file_list.json",
-				"container": "configs"
+				"type": "AzureBlobFSLocation",
+				"fileName": "population_by_age.tsv",
+				"fileSystem": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
 	}
 }
