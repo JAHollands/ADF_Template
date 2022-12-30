@@ -2,7 +2,7 @@
 	"name": "ds_example_dataset_source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_data_lake_example",
+			"referenceName": "ls_key_vault_example",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
